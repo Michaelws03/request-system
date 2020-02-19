@@ -18,6 +18,8 @@ public class Evento {
     @NotBlank
     private String nome;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotBlank
     private String produto;
 
