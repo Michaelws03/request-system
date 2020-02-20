@@ -1,5 +1,8 @@
 package events.models;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,75 +14,43 @@ public class Evento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter
+    @Setter
     private Long codigo;
 
     @NotBlank
+    @Getter
+    @Setter
     private String nome;
 
     @NotBlank
+    @Getter
+    @Setter
     private String produto;
 
     @NotBlank
+    @Getter
+    @Setter
     private String quantidade;
 
     @NotBlank
+    @Getter
+    @Setter
     private String endereco;
 
     @NotBlank
+    @Getter
+    @Setter
     private String data;
 
     @NotBlank
+    @Getter
+    @Setter
     private String horario;
 
     public Evento(@NotBlank String quantidade) {
         this.quantidade = quantidade;
     }
 
-    public Long getCodigo() {
-        return codigo;
-    }
 
-    public void setCodigo(Long codigo) {
-        this.codigo = codigo;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getProduto() {
-        return produto;
-    }
-
-    public void setProduto(String produto) {
-        this.produto = produto;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
-    public String getData() {
-        return data;
-    }
-
-    public void setData(String data) {
-        this.data = data;
-    }
-
-    public String getHorario() {
-        return horario;
-    }
-
-    public void setHorario(String horario) {
-        this.horario = horario;
-    }
 }
