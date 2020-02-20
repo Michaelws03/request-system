@@ -11,13 +11,11 @@ public class Evento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long codigo;
+    private Long codigo;
 
     @NotBlank
     private String nome;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotBlank
     private String produto;
 
@@ -25,7 +23,7 @@ public class Evento {
     private String quantidade;
 
     @NotBlank
-    private String endereço;
+    private String endereco;
 
     @NotBlank
     private String data;
@@ -37,11 +35,11 @@ public class Evento {
         this.quantidade = quantidade;
     }
 
-    public long getCodigo() {
+    public Long getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(long codigo) {
+    public void setCodigo(Long codigo) {
         this.codigo = codigo;
     }
 
@@ -61,12 +59,12 @@ public class Evento {
         this.produto = produto;
     }
 
-    public String getEndereço() {
-        return endereço;
+    public String getEndereco() {
+        return endereco;
     }
 
-    public void setEndereço(String endereço) {
-        this.endereço = endereço;
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
     public String getData() {

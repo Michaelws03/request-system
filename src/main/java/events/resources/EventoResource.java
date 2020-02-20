@@ -1,42 +1,34 @@
 package events.resources;
 
-
 import events.models.Evento;
-import events.repository.EventosRepository;
+import events.repository.EventoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 @RestController
 @RequestMapping("/evento")
 public class EventoResource {
 
     @Autowired
-    private EventosRepository er;
+    private EventoRepository eventoRepository;
 
-    @GetMapping(produces = "application/json")
-    public @ResponseBody
-    Iterable<Evento> Iterable<Evento> listaEventos() {
-        Iterable<Evento> listaEventos = er.findAll();
-        return listaEventos;
+    @GetMapping
+    public Iterable<Evento> listaEventos() {
+        return eventoRepository.findAll();
     }
 
-    @PostMaping()
-    public Evento cadastraEvento(@RequestBod @Valid Evento evento) {
-        return er.save(evento);
+    @PostMaping
+    public Evento cadastraEvento(@RequestBody @Valid Evento evento) {
+        return eventoRepository.save(evento);
     }
-    @DeleteMapping()
-    public Evento deletaEvento(@RequestBody evento evento) {
-        return er.delete(evento);
-        return evento;
+    @DeleteMapping
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deletaEvento(@RequestBody Evento evento) {
+        eventoRepository.delete(evento);
 
     }
-
-
-
-
 
 
 }
