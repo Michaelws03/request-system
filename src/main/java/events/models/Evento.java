@@ -13,8 +13,6 @@ public class Evento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long codigo;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotBlank
     private String nome;
 
@@ -24,6 +22,9 @@ public class Evento {
     private String produto;
 
     @NotBlank
+    private String quantidade;
+
+    @NotBlank
     private String endereço;
 
     @NotBlank
@@ -31,6 +32,10 @@ public class Evento {
 
     @NotBlank
     private String horario;
+
+    public Evento(@NotBlank String quantidade) {
+        this.quantidade = quantidade;
+    }
 
     public long getCodigo() {
         return codigo;
